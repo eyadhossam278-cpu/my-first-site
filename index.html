@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images,v/logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>The Challenge Page</title>
+
+    <style>
+       * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgb(250, 250, 171);
+        }
+
+        nav{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background-color: rgb(190, 17, 17);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 999;
+            opacity: 0.9;
+            list-style: none;
+        }
+
+        nav div h1{
+            color: gainsboro;
+            font-size: 50px;
+            font-family: 'Courier New', Courier, monospace;
+            padding-left: 30px;
+            font-style: oblique;
+        }
+
+        nav div h2{
+            color: #000;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 25px;
+            font-style: oblique;
+        }
+
+        nav div p{
+            color: rgb(153, 147, 147);
+            padding-left: 7px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+        .logo{
+            border-style: dashed;
+            border-color: rgb(250, 250, 171);
+            border-radius: 50%;
+        }
+
+        nav li a{
+            text-decoration: none;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: larger;
+            color: orange;
+        }
+
+        nav li a:hover{
+            color: rgb(250, 250, 171);
+        }
+
+        /* نهايه الناافاا */
+
+        .hero{
+            height: 630px;
+            background-color: rgb(206, 206, 120);
+            text-align: center;
+        }
+
+        .hero h1{
+            padding-top: 240px;
+            color: slategray;
+            font-size: 50px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-style: italic;
+        }
+
+        .hero p{
+            padding-top: 30px;
+            color: rgb(75, 75, 2);
+            font-size: 35px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        .hero button{
+            color: rgb(228, 185, 185);
+            width: 230px;
+            height: 60px;
+            background-color: rgb(199, 74, 28);
+            border-radius: 20px;
+            border-color: red;
+            justify-content: center;
+            font-size: large;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-weight: bold;
+        }
+
+        .hero button:hover {
+            background-color: #ff4500; /* لون أفتح شوية */
+            transform: translateY(-3px); /* يطلع فوق سنة */
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            transition: 0.3s;
+        }
+
+        .otuon{
+            padding-top: 70px;
+        }
+
+        .about {
+            min-height: 100vh; 
+            padding-bottom: 50px;
+            text-align: center;
+            background-color: rgb(238, 238, 140);
+        }
+
+
+        .hab{
+            color: rgb(177, 176, 125);
+            font-size: 50px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-style: italic;
+            padding-top: 55px;
+        }
+
+        .sum p{
+            color: rgb(143, 187, 226);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 28px;
+            padding-top: 25px;
+            font-weight: bold;
+        }
+
+           /* الأب اللي شايل الكروت */
+        .big {
+            display: flex;         /* السحر هنا: يخليهم جنب بعض */
+            justify-content: center; /* يوسطهم في نص الصفحة */
+            gap: 25px;             /* يسيب مسافة بين كل كارت والتاني */
+            padding: 20px;
+            flex-wrap: wrap;       /* عشان لو الشاشة صغرت ينزلوا تحت بعض وما يبوظوش */
+            padding-top: 70px;
+        }
+
+            /* الكارت نفسه */
+        .card {
+            background-color: rgb(206, 206, 120);
+            width: 320px;          /* صغرنا العرض شوية عشان المكان يكفي */
+            min-height: 250px;     /* خلي الطول مرن حسب الكلام */
+            text-align: center;
+            border-radius: 20px;   /* الـ 20% بتخليه بيضاوي زيادة، الـ px أحلى */
+            border: 2px solid red;
+            padding: 15px;         /* مساحة جوه الكارت عشان الكلام مليلزقش في الحرف */
+            transition: 0.3s;      /* عشان لما تعمل هوفر يكون ناعم */
+            padding-top: 40px;
+        }
+
+        .card:hover {
+            transform: translateY(-10px); /* نستخدم محور Y اللي لسه متعلمينه! */
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .card h1{
+            color: rgb(218, 148, 18);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 27px;
+        }
+
+        .card h2{
+            color: rgb(146, 142, 142);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        .card p{
+            color: #2c3e50;;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: large;
+            font-weight: bold;
+        }
+
+        .end {
+            padding: 60px 0;
+            text-align: center;
+            background-color: rgb(250, 250, 171); /* نفس لون الـ Body */
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .icon {
+            font-size: 40px; /* كبّرنا حجم الأيقونة */
+            text-decoration: none;
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* سطر السوستة بتاعنا! */
+            background: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+       .whatsapp { color: #25D366; } /* لون الواتساب */
+       .phone { color: #007bff; }    /* لون التليفون الأزرق */
+
+       .icon:hover {
+            transform: scale(1.2) rotate(15deg); /* تكبر وتلف شوية */
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        @media (max-width: 768px) {
+    /* 1. الناف بار: تنسيق الموبايل عشان مياخدش مساحة كبيرة */
+    nav {
+        flex-direction: column;
+        padding: 10px;
+        position: fixed;
+    }
+    nav div h1 { font-size: 25px; padding-left: 0; }
+    nav div h2 { font-size: 16px; }
+    nav div p { font-size: 12px; }
+    nav ul { display: flex; gap: 10px; padding: 5px 0; }
+    nav li a { font-size: 14px; }
+
+    /* 2. الهيرو: زودنا الـ padding عشان الكلام يظهر تحت الـ Nav */
+    .hero {
+        height: auto;
+        padding: 200px 20px 50px 20px; /* الـ 200px دي هي اللي هتظهر "I'm Eyad" */
+    }
+    .hero h1 {
+        padding-top: 0; 
+        font-size: 28px;
+    }
+    .hero p {
+        font-size: 18px;
+        line-height: 1.5;
+    }
+
+    /* 3. الكروت وباقي الأقسام */
+    .big {
+        padding-top: 30px;
+    }
+    .card {
+        width: 100%;
+        max-width: 350px;
+        margin: 0 auto;
+    }
+    .hab { font-size: 35px; }
+    }
+
+
+
+
+
+
+    </style>
+
+</head>
+
+<body>
+    <nav>              
+        <div class="logo">
+            <h1>EY</h1>
+         </div>
+        <div>
+            <h2>Eyad Hossam</h2>
+            <p>Front-End Developer</p>
+        </div>
+        <ul>
+        <li><a href="#">Homepage</a></li>
+        <li><a href="#">About me</a></li>
+        <li><a href="#">end</a></li>
+        </ul>
+    </nav>
+
+
+
+    <div class="hero" id="Homepage">
+        <h1>I'm Eyad</h1>
+        <p>I am a web programmer after a considerable period of hard work, effort, and study of programming languages, and this website is the biggest proof and witness to that.</p>
+        <div class="otuon">
+        <button>This is my site  </button>
+        </div>
+    </div>
+
+
+
+
+    <div class="about" id="About me">
+        <h1 class="hab">About me</h1>
+        <div class="sum">
+        <img src="" alt="">
+        <p>Some of the fields and jobs I have obtained</p>
+        </div>
+    <div class="big">
+        <div class="card">
+            <h1>The first field</h1>
+            <h2>HTML</h2>
+            <p>I mastered this programming language in a remarkable time, and I practiced and mastered it extensively. This website is one of my achievements and the result of my hard work.</p>
+        </div>
+        <div class="card">
+            <h1>The second area</h1>
+            <h2>CSS</h2>
+            <p>I mastered this programming language in a remarkable time, and I practiced and mastered it extensively. This website is one of my achievements and the result of my hard work.</p>
+        </div>
+        <div class="card">
+            <h1>The third area</h1>
+            <h2>JavaScript</h2>
+            <p>I mastered this programming language in a remarkable time, and I practiced and mastered it extensively. This website is one of my achievements and the result of my hard work.</p>
+        </div>
+    </div>    
+    </div>
+
+
+
+
+    <div class="end" id="end">
+    <h1 class="hab">Contact Me</h1>
+    <div class="social-icons">
+        <!-- أيقونة الواتساب -->
+        <a href="https://wa.me" class="icon whatsapp"><i class="fa-brands fa-whatsapp"></i></a>
+        <!-- أيقونة الهاتف (اللي طلبتها) -->
+        <a href="tel:رقمك_هنا" class="icon phone"><i class="fa-solid fa-phone"></i></a>
+    </div>
+    <p style="margin-top: 20px; color: gray;">© 2026 Eyad Hossam - All Rights Reserved</p>
+    </div>
+
+</body>
+</html>
